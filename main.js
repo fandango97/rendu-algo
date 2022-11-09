@@ -35,19 +35,24 @@ console.log(Survivor5)
 
 tabSurvivants = [Survivor1, Survivor2, Survivor3, Survivor4, Survivor5]
 
-console.log(Math.floor(Math.random()*3))
 
-for (i=0;i<tabSurvivants.length+1;i++){
+for (i=0;i<tabSurvivants.length;i++){
     let proba = Math.floor(Math.random()*3)
+    console.log(proba)
+    console.log(killer.hp)
     if(killer.hp>0){
         switch (proba) {
             case 0:
                 console.log(tabSurvivants[i].name + " le " + tabSurvivants[i].carac + " est mort")
+                break
             case 1: 
                 killer.hp = killer.hp - 10
                 console.log(tabSurvivants[i].name + " le " + tabSurvivants[i].carac + " a esquivé et infligé 10dmg")
+                break
             case 2:
                 killer.hp = killer.hp - 15
+                console.log(tabSurvivants[i].name + " a infligé 15 dmg")
+                break
         }
     }
     else {
